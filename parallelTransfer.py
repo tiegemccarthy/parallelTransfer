@@ -8,8 +8,6 @@ import sys
 import itertools
 import glob
 
-#TEST
-
 # When using wild cards, make sure you enclose file call in ''
 
 ###### MANUALLY EDIT #####
