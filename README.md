@@ -1,13 +1,13 @@
 # parallelTransfer.py
 Small python wrapper script for parallel usage of transfer clients 'etransfer' and 'm5copy'
 
-# DISCLAIMER 
+# Disclaimer 
 
 This is currently very rough, with no error handling and absolutely no gaurantee it will not do something terrible, use at your own risk.
 
 m5copy implementation only supports transferring from 'file' type
 
-# USAGE 
+# Usage 
 
 ./parallelTransfer.py <file_name(s)> <destination> <number_of_parallel_processes> <transfer_client>
 
