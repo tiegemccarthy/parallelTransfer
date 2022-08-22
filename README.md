@@ -1,2 +1,2 @@
 # parallelTransfer
-Small python wrapper script for etransfer and m5copy
+Small python wrapper script for parallel usage of transfer clients 'etransfer' and 'm5copy'
