@@ -8,31 +8,33 @@ import sys
 import itertools
 import glob
 
-##### DISCLAIMER #####
+# --DISCLAIMER--
 
 # This is currently very rough, use at your own risk.
-
 # m5copy implementation only supports transferring from 'file' type
 
-##### USAGE #####
+# --USAGE-- 
 
 # ./parallelTransfer.py <file_name(s)> <destination> <number_of_parallel_processes> <transfer_client>
 
 # When using wild cards for file, make sure you enclose file call in ''
 # Destination should be in the standard format you would use for 'etransfer' or 'm5copy'
-# if using m5copy and number of parallel processes exceeds number of available UDP ports, nothing will happen (maybe), but it will be constrained to the number of ports available.
+
+# If using m5copy and number of parallel processes exceeds number of available UDP 
+# ports, nothing will happen (maybe), but it will be constrained to the number of 
+# ports available.
 # Transfer client 0 for etransfer or 1 for m5copy
 
-###### MANUALLY EDIT #####
+# --MANUALLY EDIT--
 
 # etransfer client location:
 etc = '~/etransfer/Linux-x86_64-native-opt/etc'
 
-# Define available UDP ports for m5copy transfers.
+# Define available UDP ports (open on destination) for m5copy transfers.
 udp_ports = [2640, 2641, 2642, 2643, 2644, 2645, 2646, 2647, 2648, 2649, 2650, 2651, 2652, 2653, 2654]
 free_udp_ports = Queue() # start port queue
 
-##########################
+# -----------------------------------------------------------------------------
 
 def transfer(transfer_file):
     time.sleep(3)
