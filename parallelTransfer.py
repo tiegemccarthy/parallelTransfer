@@ -7,6 +7,7 @@ import os
 import sys
 import itertools
 import glob
+import subprocess
 
 # --DISCLAIMER--
 
@@ -23,7 +24,7 @@ import glob
 # If using m5copy and number of parallel processes exceeds number of available UDP 
 # ports, nothing will happen (maybe), but it will be constrained to the number of 
 # ports available.
-# Transfer client 0 for etransfer or 1 for m5copy
+# Transfer client 0 for etransfer or 1 for m5copy - defaults to m5copy
 
 # --MANUALLY EDIT--
 
@@ -56,7 +57,7 @@ def m5copyFunc(transfer_file):
         free_udp_ports.put_nowait(free_port) # release port back to the queue
     return   
    
-def main(tag, num_proc, transfer_client):
+def main(tag, num_proc, transfer_client=1):
     # Initialise available ports
     for port in udp_ports:
         free_udp_ports.put_nowait(port)
