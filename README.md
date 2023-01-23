@@ -9,7 +9,7 @@ m5copy implementation only supports transferring from 'file' type
 
 # Usage 
 
-./parallelTransfer.py <file_name(s)> <test> <number_of_parallel_processes> <transfer_client>
+parallelTransfer.py <file(s)> <destination_m5copy_format> <number_processes> <transfer_client_id>
 
 When using wild cards for file, make sure you enclose file call in ''
 
