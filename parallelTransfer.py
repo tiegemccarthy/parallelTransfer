@@ -52,7 +52,7 @@ def m5copyFunc(transfer_file):
     free_port = free_udp_ports.get() # block until a free udp port is available
     #os.system('m5copy --resume -udt -p 2630' + ' file://' + transfer_file + ' ' + destination)
     try:
-        os.system('m5copy --resume -udt -p ' + str(free_port) + ' file://' + transfer_file + ' ' + destination + ' > /dev/null')
+        os.system('m5copy --resume -udt -p ' + str(free_port) + ' file://' + transfer_file + ' ' + destination + ' 1> /dev/null')
         print(transfer_file + ' transferred.')
     finally:
         free_udp_ports.put_nowait(free_port) # release port back to the queue
