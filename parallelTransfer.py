@@ -44,6 +44,7 @@ def transfer(transfer_file): # Remnant of testing
     return
     
 def etransferFunc(transfer_file):
+    print(transfer_file + ' being sent to ' + str(destination))
     os.system(etc + ' ' + transfer_file + ' ' + str(destination))
     print(transfer_file + ' being sent to ' + str(destination))
     return
@@ -52,8 +53,9 @@ def m5copyFunc(transfer_file):
     free_port = free_udp_ports.get() # block until a free udp port is available
     #os.system('m5copy --resume -udt -p 2630' + ' file://' + transfer_file + ' ' + destination)
     try:
+        print('Beginning transfer of ' + transfer_file + '...')
         os.system('m5copy --resume -udt -p ' + str(free_port) + ' file://' + transfer_file + ' ' + destination + ' 1> /dev/null')
-        print(transfer_file + ' transferred.')
+        print(transfer_file + ' transfer complete.')
     finally:
         free_udp_ports.put_nowait(free_port) # release port back to the queue
     return   
